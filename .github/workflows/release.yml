@@ -5,10 +5,10 @@ on:
     tags:
       - "v*"
     branches:
-      - cmeel
+      - main
   pull_request_target:
     branches:
-      - cmeel
+      - main
 
 env:
   CMEEL_LOG_LEVEL: DEBUG
