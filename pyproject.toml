@@ -14,6 +14,7 @@ homepage = "https://github.com/cmake-wheel/cmeel-teaser-plusplus"
 upstream = "https://github.com/MIT-SPARK/TEASER-plusplus"
 
 [tool.cmeel]
+build-number = 0
 run-tests = false
 source = "TEASER-plusplus"
 
