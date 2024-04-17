@@ -25,6 +25,7 @@ jobs:
         exclude:
           - os: "macos"
             arch: "aarch64"
+          - os: "macos"  # issue with openmp in pmc dep
     steps:
       - uses: actions/checkout@v4
         with:
