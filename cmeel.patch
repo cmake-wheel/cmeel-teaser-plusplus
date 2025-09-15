@@ -1,19 +1,19 @@
 --- TEASER-plusplus/CMakeLists.txt.orig	2023-11-29 16:15:49.000000000 +0100
 +++ TEASER-plusplus/CMakeLists.txt	2024-04-17 16:06:38.765333088 +0200
 @@ -29,7 +29,8 @@
- 
+
  # Cache Variables
  if (NOT TEASERPP_PYTHON_VERSION)
 -    set(TEASERPP_PYTHON_VERSION "" CACHE STRING "Python version to use for TEASER++ bindings.")
 +    find_package(Python3 REQUIRED COMPONENTS Interpreter Development.Module)
 +    set(TEASERPP_PYTHON_VERSION "${Python3_VERSION}" CACHE STRING "Python version to use for TEASER++ bindings.")
  endif ()
- 
+
  # Find dependencies
 --- TEASER-plusplus/cmake/GoogleTest.CMakeLists.txt.in.orig	2023-11-29 16:15:32.000000000 +0100
 +++ TEASER-plusplus/cmake/GoogleTest.CMakeLists.txt.in	2024-04-17 16:01:25.206585096 +0200
 @@ -4,7 +4,7 @@
- 
+
  include(ExternalProject)
  ExternalProject_Add(googletest
 -        URL                https://github.com/google/googletest/archive/release-1.8.1.zip
@@ -44,7 +44,7 @@
 @@ -38,6 +38,13 @@
      target_link_libraries(teaser_registration PRIVATE OpenMP::OpenMP_CXX)
  endif()
- 
+
 +if(APPLE)
 +    SET_TARGET_PROPERTIES(teaser_registration PROPERTIES
 +        INSTALL_RPATH "@loader_path")

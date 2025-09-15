@@ -1,6 +1,6 @@
 [build-system]
 build-backend = "cmeel"
-requires = ["cmeel[build]", "cmeel-eigen"]
+requires = ["cmeel-eigen", "cmeel[build]"]
 
 [project]
 description = "cmeel distribution for TEASER++"
