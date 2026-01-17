@@ -1,8 +1,9 @@
 [build-system]
 build-backend = "cmeel"
-requires = ["cmeel-eigen", "cmeel[build]"]
+requires = ["cmeel-eigen", "cmeel-libomp; sys_platform == 'darwin'", "cmeel[build]"]
 
 [project]
+dependencies = ["cmeel-libomp; sys_platform == 'darwin'"]
 description = "cmeel distribution for TEASER++"
 license = "MIT"
 name = "cmeel-teaser-plusplus"
