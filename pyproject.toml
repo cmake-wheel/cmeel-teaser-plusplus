@@ -1,12 +1,12 @@
 [build-system]
 build-backend = "cmeel"
-requires = ["cmeel[build]", "cmeel-eigen"]
+requires = ["cmeel-eigen", "cmeel[build]"]
 
 [project]
 description = "cmeel distribution for TEASER++"
 license = "MIT"
 name = "cmeel-teaser-plusplus"
-requires-python = ">= 3.8"
+requires-python = ">= 3.10"
 version = "2.0"
 
 [project.urls]
